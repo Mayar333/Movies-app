@@ -1,0 +1,43 @@
+
+
+<div class="container">
+  <h1 class="mb-3 text-center">Registaration Form</h1>
+  <form [formGroup]="userForm" (ngSubmit)="showFormData(userForm)">
+
+<label> Frist Name : </label>
+<input formControlName="first_name" type=" text" class="form-control mb-3">
+<p class="text-danger"   *ngIf="userForm.controls['first_name'].invalid && userForm.controls['first_name'].touched ">
+<span *ngIf=" userForm.controls['first_name'].errors?.['minlength']"> please insert at least  {{  userForm.controls['first_name'].errors?.['minlength'].requiredLength}} </span>
+<span *ngIf=" userForm.controls['first_name'].errors?.['pattern']"> please start with captial letter </span>
+
+</p>
+
+<label>Last_name :</label>
+<input formControlName="last_name" type="text" class="form-control mb-3">
+<p class="text-danger"   *ngIf="userForm.controls['last_name'].invalid
+&& userForm.controls['last_name'].touched ">Last name is valid</p>
+
+
+<label>Age :</label>
+<input  formControlName="age" type="number" class="form-control mb-3">
+<p class="text-danger"   *ngIf="userForm.controls['age'].invalid
+ && userForm.controls['age'].touched ">Age is valid</p>
+
+
+<label>Email :</label>
+<input formControlName="email" type="email" class="form-control mb-3">
+<p class="text-danger"   *ngIf="userForm.controls['email'].invalid &&
+ userForm.controls['email'].touched ">Email is vaild</p>
+
+
+<label>Password :</label>
+<input formControlName="password" type="password" class="form-control mb-3">
+<p class="text-danger"   *ngIf="userForm.controls['password'].invalid
+&& userForm.controls['password'].touched ">Password is vaild</p>
+
+<button [disabled]="userForm.invalid && userForm.touched" class="btn btn-danger text-white"> Register </button>
+<h1 class="text-warning  text-center">{{msg}}</h1>
+  </form>
+</div>
+
+

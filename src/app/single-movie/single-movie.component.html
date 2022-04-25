@@ -1,0 +1,27 @@
+
+
+<div *ngIf="recevied" class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="">
+        <img  [src] ="  'https://image.tmdb.org/t/p/w500' + singleMovieObj.poster_path"
+        class="w-100">
+      </div>
+    </div>
+    <div class="col-md-8  ">
+      <div class="p-4">
+        <h1>{{singleMovieObj.title}}</h1>
+        <span class="lon">   {{singleMovieObj.tagline}}</span> <br><br>
+        <p class="btn btn-info p-1 m-2 text-white">{{singleMovieObj.genres[0].name}}</p>
+        <p class="btn btn-info p-1 m-2 text-white">{{singleMovieObj.genres[1].name}}</p>
+        <p class="btn btn-info p-1 m-2 text-white">{{singleMovieObj.genres[2].name}}</p>
+<br> <br>
+        <h5> Vote : {{singleMovieObj.vote_average}}</h5> <br>
+        <h5> Vote Count : {{singleMovieObj.vote_count}}</h5> <br>
+        <h5> Popularity : {{singleMovieObj.popularity}}</h5> <br>
+        <h5> Release Data : {{singleMovieObj.release_date}}</h5> <br>
+        <p class="lon"> {{singleMovieObj.overview}}</p>
+      </div>
+    </div>
+  </div>
+</div>

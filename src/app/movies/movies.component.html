@@ -1,0 +1,61 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+    <div class="">
+      <h2>Now Playing <br> Movies <br> Watch Now </h2>
+    </div>
+  </div>
+
+    <div *ngFor="let movie of moviesContainer  " class="col-md-2 ">
+      <div class=" position-relative">
+        <img [src] ="  'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+         class="w-100  border-raduis "
+
+         [routerLink]="  ['/singlemovie', movie.id , movie.title]  "
+         />
+
+        <h4 class="text-center">{{movie.title}}</h4>
+
+        <p class="vote bg-info">{{movie.vote_average}}</p>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<br><br><br>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+    <div class="">
+      <h2>Top Rated <br> Movies <br> Watching Now  </h2>
+    </div>
+  </div>
+
+    <div *ngFor="let x of   rated " class="col-md-2 ">
+      <div class=" position-relative">
+        <img [src] ="  'https://image.tmdb.org/t/p/w500' + x.poster_path"
+         class="w-100"
+
+         [routerLink]="  ['/singlemovie', x.id , x.title]  "
+         />
+
+        <h4 class="text-center">{{x.title}}</h4>
+
+        <p class="vote bg-info">{{x.vote_average}}</p>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+

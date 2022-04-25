@@ -1,0 +1,28 @@
+
+
+<div class="mynav d-flex justify-content-between p-4">
+<ul class="d-flex justify-content-between w-50  list-unstyled">
+  <li class="logo "> Noxe</li>
+  <li routerLink= "register" routerLinkActive="bg-danger rounded ">Register </li>
+  <li routerLink= "login" routerLinkActive="bg-danger rounded ">LogIn </li>
+
+  <li *ngIf="enabelNavbar" routerLink= "movies" routerLinkActive="bg-danger rounded " >Movies</li>
+
+  <li *ngIf="enabelNavbar" routerLink= "people" routerLinkActive="bg-danger rounded " >People</li>
+  <li *ngIf="enabelNavbar" routerLink= "network" routerLinkActive="bg-danger rounded ">Network</li>
+  <li *ngIf="enabelNavbar" routerLink= "tvs" routerLinkActive="bg-danger rounded ">TVS</li>
+
+</ul>
+
+<div class="d-flex justify-content-around w-50">
+  <input type="text" placeholder="search" class="d-inline-block rounded">
+  <div class="social">
+  <i class="fab fa-facebook"></i>
+  <i class="fab fa-instagram"></i>
+  <i class="fab fa-youtube"></i>
+  <i class="fab fa-facebook"></i>
+</div>
+   <span  *ngIf="enabelNavbar" (click)="logOut()" class="btn btn-warning "> Log Out</span>
+</div>
+
+</div>
